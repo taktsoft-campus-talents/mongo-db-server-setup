@@ -4,26 +4,26 @@ This Makefile provides a streamlined setup for running a MongoDB server using Do
 
 This is just for local development and testing purposes. It is not recommended for production use.
 
-## Targets
-
-- all: Sets up Docker, starts Colima, creates and starts the MongoDB - container.
-- clean: Stops and removes the MongoDB container, then stops Colima.
-- restart: Cleans up the environment and then runs the all target to - restart everything.
-- docker-setup: Installs Docker, Docker Buildx, and Colima using - Homebrew.
-- docker-start: Starts Colima.
-- docker-stop: Stops Colima.
-- mongo-create: Creates a new MongoDB container.
-- mongo-start: Starts the MongoDB container and lists running - containers.
-- mongo-shell: Opens an interactive shell in the MongoDB container.
-- mongo-stat: Displays MongoDB statistics.
-- mongo-stop: Stops the MongoDB container.
-
 ## Usage
 
-Just run the `make` command to set up the MongoDB server:
+If you are using this Makefile for the first time, you need to install Docker, Docker Buildx, and Colima using the following command:
 
 ```sh
 make all
+```
+
+If you have already installed the dependencies, you can start the MongoDB server using the following command:
+
+Docker daemon needs to be running for this to work. If it is not running, you can start it using the following command:
+
+```sh
+make docker-start
+```
+
+To start the MongoDB server, run the following command:
+
+```sh
+make mongo-start
 ```
 
 To clean up the environment, run the following command:
